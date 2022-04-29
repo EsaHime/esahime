@@ -27,6 +27,7 @@ module.exports = async function () {
     console.warn('Unable to check Esahime version, skipped.')
   }
 
+  spinner.stop()
   spinner.start('Fetching config...')
 
   let templateConfig = {}
