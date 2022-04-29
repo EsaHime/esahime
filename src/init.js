@@ -111,6 +111,20 @@ module.exports = async function () {
     spinner.fail('Filling the information...Failed')
   }
 
+  spinner.stop()
+  spinner.start('Cleaning up...')
+  try {
+    const gitFolder = path.resolve('.git')
+    if (fs.existsSync(gitFolder)) {
+      fs.rmSync(gitFolder, {
+        recursive: true
+      })
+    }
+    spinner.succeed('Cleaning up...Done')
+  } catch (error) {
+    console.warn('Cleaning up failed. Maybe you have to remove git repo manually.')
+  }
+
   console.log()
   spinner.stopAndPersist({
     symbol: '🚀',
