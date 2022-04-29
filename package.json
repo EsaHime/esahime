@@ -1,6 +1,6 @@
 {
   "name": "@lancercomet/esahime",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Esahime CLI.",
   "main": "./src/index.js",
   "bin": {
